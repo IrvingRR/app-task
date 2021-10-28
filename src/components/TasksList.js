@@ -21,7 +21,7 @@ const TasksList = function ({tasks, toggleTask, deleteTask, deleteTasksCompleted
                     {tasks.length > 0
                         ?   tasks.map((task) => <TaskElement deleteTask={deleteTask} toggleTask={toggleTask} id={task.id} key={task.id} title={task.title} completed={task.completed} />)
                         :   <tr>
-                                <td colSpan="3" className="tasksList-table-message">No hay tareas</td>
+                                <td colSpan="3" className="tasksList-table-message">No tasks</td>
                             </tr>
                     }
                 </tbody>
@@ -35,7 +35,7 @@ const TasksList = function ({tasks, toggleTask, deleteTask, deleteTasksCompleted
                         </td>
                         <td colSpan="2" className="taskLit-table-foot-amount">
                             <p>
-                                Total de tareas pendientes:
+                                Total pending tasks:
                                 <span>
                                     {tasks.filter((task) => task.completed === false).length}
                                 </span>
