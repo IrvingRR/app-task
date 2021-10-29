@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import uuid from 'react-uuid'
 
 const FormTask = function ({ addTask }) {
@@ -11,7 +9,7 @@ const FormTask = function ({ addTask }) {
     const [form, setForm] = useState(null);
     const [task, setTask] = useState({ id:null, title: '', completed: false });
 
-    // Expressions
+    // Expression to validation
     const expressionTask = /^[a-zA-ZÀ-ÿ\s0-9]{4,40}$/;
 
     // Functions
@@ -58,8 +56,7 @@ const FormTask = function ({ addTask }) {
                 <Input className="formTask-input" type="text" name="task" placeholder="Add new task" valid={inputTask} autoComplete="off" onChange={handleChange} onKeyUp={validation} />
             </GroupInput>
                 <MessageInput valid={inputTask}>
-                    <p>Task must have only letters and numbers</p>
-                    <FontAwesomeIcon icon={faTimes} />
+                    <p>Task must have a minimum of 4 characters and a maximum of 40 and only letters and numbers</p>
                 </MessageInput>
             <Button className="formTask-button">Add</Button>
             <MessageError form={form}>Please enter a valid value</MessageError>
@@ -143,18 +140,15 @@ const MessageInput = styled.div`
     height: 0;
     border-radius: 0;
     opacity: 0;
+    position: relative;
+    font-size: 11px;
 
     ${props => props.valid === 'false' && css`
-        padding: 10px 20px;
-        height: 40px;
+        padding: 15px 20px;
+        height: 50px;
         opacity: 1;
         border-radius: 30px;
     `}
-
-    @media only screen and (max-width: 375px) {
-        font-size: 12px;
-    }
-    
 `;
 
 const MessageError = styled.div`
@@ -175,4 +169,8 @@ const MessageError = styled.div`
         height: 40px;
         opacity: 1;
     `}
+
+    @media only screen and (max-width: 375px) {
+        font-size: 12px;
+    }
 `;

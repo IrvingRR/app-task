@@ -3,7 +3,7 @@ import TaskElement from './TaskElement';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash} from '@fortawesome/free-solid-svg-icons'
 
-const TasksList = function ({tasks, toggleTask, deleteTask, deleteTasksCompleted}) {
+const TasksList = function ({tasks, toggleTask, deleteTasksCompleted, showModalDelete}) {
 
     return (
 
@@ -19,7 +19,7 @@ const TasksList = function ({tasks, toggleTask, deleteTask, deleteTasksCompleted
                 </thead>
                 <tbody>
                     {tasks.length > 0
-                        ?   tasks.map((task) => <TaskElement deleteTask={deleteTask} toggleTask={toggleTask} id={task.id} key={task.id} title={task.title} completed={task.completed} />)
+                        ?   tasks.map((task) => <TaskElement  showModalDelete={showModalDelete} toggleTask={toggleTask} id={task.id} key={task.id} title={task.title} completed={task.completed} />)
                         :   <tr>
                                 <td colSpan="3" className="tasksList-table-message">No tasks</td>
                             </tr>
@@ -27,15 +27,15 @@ const TasksList = function ({tasks, toggleTask, deleteTask, deleteTasksCompleted
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td className="taskLit-table-foot-action">
+                        <td colSpan="2" className="taskLit-table-foot-action">
                             <button className="taskList-table-foot-button" onClick={deleteTasksCompleted}>
-                                <FontAwesomeIcon icon={faTrash} />
-                                Delete completed
+                                <FontAwesomeIcon className="tableList-foot-button-icon" icon={faTrash} />
+                                <span>Delete completeds</span>
                             </button>
                         </td>
-                        <td colSpan="2" className="taskLit-table-foot-amount">
+                        <td className="taskLit-table-foot-amount">
                             <p>
-                                Total pending tasks:
+                                Pendings:
                                 <span>
                                     {tasks.filter((task) => task.completed === false).length}
                                 </span>

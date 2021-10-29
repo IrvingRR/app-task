@@ -3,14 +3,14 @@ import styled, {css} from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash, faCheck } from '@fortawesome/free-solid-svg-icons'
 
-const TaskElement = function ({ title, completed, id, toggleTask, deleteTask }) {
+const TaskElement = function ({ title, completed, id, toggleTask, showModalDelete }) {
 
     const handleChange = () => {
         toggleTask(id);
     }
 
     const handleClick = () => {
-        deleteTask(id);
+        showModalDelete(id);
     }
 
     return (
@@ -20,7 +20,7 @@ const TaskElement = function ({ title, completed, id, toggleTask, deleteTask }) 
             </Cell>
             <Cell>
                 <Label htmlFor={`status-task-${id}`} completed={completed.toString()}>
-                    {completed && <IconCheck icon={faCheck} completed={completed.toString()}/> }
+                    <IconCheck icon={faCheck} completed={completed.toString()}/>
                 </Label>
                 <CheckBox type="checkbox" name="status-task" checked={completed} onChange={handleChange} id={`status-task-${id}`} />
             </Cell>
@@ -66,7 +66,7 @@ const Label = styled.label`
     width: 20px;
     height: 20px;
     padding: 10px;
-    border: 1px solid #fff;
+    border: 2px solid #fff;
     border-radius: 100%;
     background: transparent;
     cursor: pointer;
@@ -101,8 +101,12 @@ const ButtonAction = styled.button`
 
 const IconCheck = styled(FontAwesomeIcon)`
     color: #fff;
-    font-size: 10px;
     transition: 0.3s ease;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
+
+    ${props => props.completed === 'true' && css`
+        opacity: 1;
+        visibility: visible;
+    `}
 `;

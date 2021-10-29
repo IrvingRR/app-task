@@ -139,6 +139,8 @@ ul, li {
 .tasksList-table tbody {
   width: 100%;
   min-height: 100px;
+  max-height: 10px;
+  overflow-y: auto;
   transition: 0.3s ease;
 }
 
@@ -153,7 +155,6 @@ ul, li {
   background: var(--dark-gradient);
 }
 
-
 .tasksList-table tfoot tr td {
   padding: 10px 20px;
   font-size: 12px;
@@ -167,12 +168,21 @@ ul, li {
   cursor: pointer;
   transition: 0.3s ease;
   display: flex;
+  align-items: center;
   gap: 5px;
 }
 
 @media only screen and (max-width: 425px) {
-  .taskList-table-foot-button,
+  .taskList-table-foot-button span,
+  .tableList-foot-button-icon,
   .taskLit-table-foot-amount p {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .taksList-table-foot-button span,
+  .tableList-foot-button-icon {
     font-size: 10px;
   }
 }
@@ -182,9 +192,18 @@ ul, li {
 }
 
 .taskLit-table-foot-amount {
-  text-align: right;
+  text-align: center;
+  padding: 10px;
+  width: 150px;
 }
 
+@media only screen and (max-width: 425px) {
+  .taskLit-table-foot-amount {
+    width: 100px;
+  }
+}
+
+
 .taskLit-table-foot-amount span {
-  margin: 0 5px;
+  margin-left: 5px;
 }
