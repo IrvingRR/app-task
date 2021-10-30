@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/app-task/static/css/main.c24f5e0c.chunk.css",
-    "main.js": "/app-task/static/js/main.aa95d242.chunk.js",
-    "main.js.map": "/app-task/static/js/main.aa95d242.chunk.js.map",
+    "main.css": "/app-task/static/css/main.642d0028.chunk.css",
+    "main.js": "/app-task/static/js/main.925e61b4.chunk.js",
+    "main.js.map": "/app-task/static/js/main.925e61b4.chunk.js.map",
     "runtime-main.js": "/app-task/static/js/runtime-main.d38c4ac1.js",
     "runtime-main.js.map": "/app-task/static/js/runtime-main.d38c4ac1.js.map",
     "static/js/2.bff3ec71.chunk.js": "/app-task/static/js/2.bff3ec71.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.9db83193.chunk.js": "/app-task/static/js/3.9db83193.chunk.js",
     "static/js/3.9db83193.chunk.js.map": "/app-task/static/js/3.9db83193.chunk.js.map",
     "index.html": "/app-task/index.html",
-    "static/css/main.c24f5e0c.chunk.css.map": "/app-task/static/css/main.c24f5e0c.chunk.css.map",
+    "static/css/main.642d0028.chunk.css.map": "/app-task/static/css/main.642d0028.chunk.css.map",
     "static/js/2.bff3ec71.chunk.js.LICENSE.txt": "/app-task/static/js/2.bff3ec71.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d38c4ac1.js",
     "static/js/2.bff3ec71.chunk.js",
-    "static/css/main.c24f5e0c.chunk.css",
-    "static/js/main.aa95d242.chunk.js"
+    "static/css/main.642d0028.chunk.css",
+    "static/js/main.925e61b4.chunk.js"
   ]
 }
