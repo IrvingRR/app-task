@@ -57,7 +57,7 @@ function App() {
 
   return (
     <main className="App" >
-      <h1>TaskList App</h1>
+      <h1 className="app-title">TaskList App</h1>
       <ModalDelete title="Do you want delete this task?" deleteTask={deleteTask} modalDelete={modalDelete} setModalDelete={setModalDelete} hiddenModalDelete={hiddenModalDelete} />
 
         <FormTask addTask={addTask} />
