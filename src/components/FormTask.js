@@ -66,6 +66,9 @@ const FormTask = function ({ addTask }) {
 
 export default FormTask;
 
+/* Style Components
+----------------------------------- */
+
 const Form = styled.form`
   width: 400px;
   display: flex;
@@ -136,15 +139,14 @@ const MessageInput = styled.div`
     transition: 0.3s ease;
     z-index: 100;
     overflow: hidden;
-    padding: 0 20px;
+    padding: 0 10px;
     height: 0;
     border-radius: 0;
     opacity: 0;
-    position: relative;
     font-size: 11px;
 
     ${props => props.valid === 'false' && css`
-        padding: 15px 20px;
+        padding: 15px 10px;
         height: 50px;
         opacity: 1;
         border-radius: 30px;

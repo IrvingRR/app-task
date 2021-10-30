@@ -24,6 +24,9 @@ const ModalDelete = function({title, modalDelete, setModalDelete, hiddenModalDel
 
 export default ModalDelete;
 
+/* Style Components
+----------------------------------- */
+
 const Title = styled.h2`
     color: #fff;
     text-align: center;

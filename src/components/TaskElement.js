@@ -24,7 +24,7 @@ const TaskElement = function ({ title, completed, id, toggleTask, showModalDelet
                 </Label>
                 <CheckBox type="checkbox" name="status-task" checked={completed} onChange={handleChange} id={`status-task-${id}`} />
             </Cell>
-            <Cell>
+            <Cell className="action-task">
                 <ButtonAction onClick={handleClick}>
                     <FontAwesomeIcon icon={faTrash}/>
                 </ButtonAction>
@@ -35,7 +35,8 @@ const TaskElement = function ({ title, completed, id, toggleTask, showModalDelet
 
 export default TaskElement;
 
-/* Styled Compoenents Elements */
+/* Style Components
+----------------------------------- */
 
 const Row = styled.tr`
     padding: 10px 0;
@@ -47,14 +48,14 @@ const Cell = styled.td`
           text-align: left;
       }
 
+      &.action-task {
+          text-align: center;
+      }
+
       @media only screen and (max-width: 425px) {
         overflow-x: auto;
         font-size: 12px;
         max-width: 100px;
-    }
-
-    @media only screen and (max-width: 320px) {
-        font-size: 11px;
     }
 
 `;

@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Variables
+------------------------------- */
 
 :root {
   --primary:#ff0d7a;
@@ -20,8 +17,13 @@
   --error: rgb(255, 45, 84);
 }
 
-/* Normalized 
+/* Normalized Styles
 -------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: var(--font);
@@ -66,144 +68,107 @@ ul, li {
   }
 }
 
-/* Container
------------------- */
-.container {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-/* TasksList
-------------------------- */
-.tasksList {
-  width: 100%;
-  text-align: center;
-  position: relative;
-  padding: 10px;
-  overflow: auto;
-}
-
-@media only screen and (max-width: 320px) {
-  .tasksList {
-    padding: 0;
-  }
-}
-
-/* Task table
+/* Container Table
 ------------------------------- */
-.tasksList-table {
+.container-table {
   width: 100%;
-  margin: auto;
-  margin-top: 20px;
-  padding: 10px;
-  border-radius: 10px;
-  border-collapse: collapse;
-  background: var(--dark-gradient);
-  overflow: hidden;
+  max-width: 700px;
+  max-height: 360px;
+  overflow: auto;
+  position: relative;
+  border-radius: 4px;
+  margin-top: 16px;
 }
 
-@media only screen and (max-width: 320px) {
-  .tasksList-table {
-    width: 80%;
+@media only screen and (max-width: 768px) {
+  .container-table {
+    max-height: 270px;
   }
 }
 
-/* TaskList table thead 
--------------------------------*/
-.tasksList-table thead {
+/* Table
+------------------------------- */
+.table {
+  width: 100%;
+  height: 100%;
   background: var(--dark-gradient);
+  border-collapse: collapse;
+  border-color: transparent;
 }
 
-.tasksList-table th, td {
-  padding: 10px 20px;
-  text-align: center;
-  max-width: 400px;
+/* Table thead
+------------------------------- */
+
+.table thead {
+  position: sticky;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.tasksList-table th.thead-task {
+.table thead th:nth-child(1) {
   text-align: left;
 }
 
-@media only screen and (max-width: 425px) {
-  .tasksList-table th {
+.table tr th,
+.table tr td {
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 14px;
+  width: 400px;
+  overflow: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .table tr th,
+  .table tr td {
     font-size: 12px;
   }
 }
 
-/* TasksList tbody */
-.tasksList-table tbody {
+/* Container Table Footer
+------------------------------- */
+.container-table-footer {
   width: 100%;
-  min-height: 100px;
-  max-height: 10px;
-  overflow-y: auto;
-  transition: 0.3s ease;
-}
-
-.tasksList-table-message {
-  padding: 10px 20px;
-  text-align: left;
-}
-
-/* TasksList table tfoo 
--------------------------------*/
-.tasksList-table tfoot{
-  background: var(--dark-gradient);
-}
-
-.tasksList-table tfoot tr td {
-  padding: 10px 20px;
-  font-size: 12px;
-}
-
-.taskList-table-foot-button {
-  color: #fff;
-  font-size: 12px;
-  font-family: var(--font);
-  background: transparent;
-  cursor: pointer;
-  transition: 0.3s ease;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 14px;
+}
+
+.container-table-footer-button {
+  background: transparent;
+  display: flex;
   gap: 5px;
+  align-items: center;
+  color: #fff;
+}
+
+.container-table-footer-amount {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .container-table-footer,
+  .container-table-footer-button  {
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
-  .taskList-table-foot-button span,
-  .tableList-foot-button-icon,
-  .taskLit-table-foot-amount p {
-    font-size: 10px;
+  .container-table-footer,
+  .container-table-footer-button  {
+    font-size: 11px;
   }
-}
-
-@media only screen and (max-width: 375px) {
-  .taksList-table-foot-button span,
-  .tableList-foot-button-icon {
-    font-size: 10px;
-  }
-}
-
-.taskList-table-foot-button:hover {
-  color: var(--primary);
-}
-
-.taskLit-table-foot-amount {
-  text-align: center;
-  padding: 10px;
-  width: 150px;
-}
-
-@media only screen and (max-width: 425px) {
-  .taskLit-table-foot-amount {
-    width: 100px;
-  }
-}
-
-
-.taskLit-table-foot-amount span {
-  margin-left: 5px;
 }

@@ -56,14 +56,13 @@ function App() {
   }
 
   return (
-    <div className="App" >
+    <main className="App" >
       <h1>TaskList App</h1>
       <ModalDelete title="Do you want delete this task?" deleteTask={deleteTask} modalDelete={modalDelete} setModalDelete={setModalDelete} hiddenModalDelete={hiddenModalDelete} />
-      <main className="container">
+
         <FormTask addTask={addTask} />
         <TasksList tasks={tasks} toggleTask={toggleTask} deleteTasksCompleted={deleteTasksCompleted} showModalDelete={showModalDelete} />
-      </main>
-    </div>
+    </main>
   );
 }
 
